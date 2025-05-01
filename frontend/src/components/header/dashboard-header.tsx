@@ -7,6 +7,7 @@ import { SearchBar } from '@/components/header/search';
 import { HeaderNavUser } from '@/components/header/header-user';
 import { ProjectSwitcher } from '@/components/header/project-switcher';
 import { useThemeStore } from '@/store/themeStore';
+import { NotificationBox } from './notification-box';
 
 export const DashboardHeader = () => {
   const { toggleDarkMode } = useThemeStore();
@@ -36,7 +37,7 @@ export const DashboardHeader = () => {
   ];
 
   return (
-    <header className="bg-opacity-50 sticky top-0 flex h-16 shrink-0 items-center justify-center gap-2 backdrop-blur-2xl transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-16">
+    <header className="bg-opacity-50 fixed sticky top-0 z-50 flex h-16 shrink-0 items-center justify-center gap-2 backdrop-blur-2xl transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-16">
       <div className="flex w-full items-center justify-between gap-2 px-4">
         <div className="flex">
           <SidebarTrigger variant="outline" size="icon" className="-ml-1" />
@@ -45,9 +46,7 @@ export const DashboardHeader = () => {
         </div>
         <div className="flex gap-x-3">
           <SearchBar />
-          <Button variant="outline" size="icon" className="cursor-pointer">
-            <Bell />
-          </Button>
+          <NotificationBox />
           <Button
             variant="outline"
             size="icon"

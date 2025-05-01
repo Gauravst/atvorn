@@ -6,7 +6,11 @@ import LoadingBar from 'react-top-loading-bar';
 import Layout from '@/Layout';
 import DashboardPage from '@/pages/dashboard/DashboardPage';
 import TasksPage from '@/pages/tasks/TasksPage';
-import TasksCreatePage from '@/pages/taskCreate/TasksCreate';
+import TasksCreatePage from '@/pages/taskCreate/TasksCreatePage';
+import UsersPage from '@/pages/users/UsersPage';
+import ChatsPage from '@/pages/chats/ChatsPage';
+import ContinuePage from '@/pages/continue/ContinuePage';
+import SignupPage from '@/pages/signup/SignupPage';
 
 const App = () => {
   const { initializeTheme } = useThemeStore();
@@ -48,13 +52,11 @@ const App = () => {
           <Route index element={<DashboardPage />} />
           <Route path="tasks" element={<TasksPage />} />
           <Route path="tasks/create" element={<TasksCreatePage />} />
-          <Route path="chats" element={<DashboardPage />} />
-          <Route path="users" element={<DashboardPage />} />
-          <Route path="apps" element={<DashboardPage />} />
+          <Route path="chats" element={<ChatsPage />} />
+          <Route path="members" element={<UsersPage />} />
         </Route>
 
-        <Route path="/login" element={<DashboardPage />} />
-        <Route path="/signup" element={<DashboardPage />} />
+        <Route path="/continue" element={<ContinuePage />} />
       </Routes>
     </>
   );

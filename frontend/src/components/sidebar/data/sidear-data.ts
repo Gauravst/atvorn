@@ -1,118 +1,111 @@
 import {
-  IconBarrierBlock,
   IconBrowserCheck,
-  IconBug,
   IconChecklist,
-  IconError404,
   IconHelp,
   IconLayoutDashboard,
-  IconLock,
-  IconLockAccess,
   IconMessages,
   IconNotification,
   IconPackages,
   IconPalette,
-  IconServerOff,
   IconSettings,
   IconTool,
   IconUserCog,
-  IconUserOff,
   IconUsers,
-} from "@tabler/icons-react";
-import { AudioWaveform, Command, GalleryVerticalEnd } from "lucide-react";
+} from '@tabler/icons-react';
+import { AudioWaveform, Command, GalleryVerticalEnd } from 'lucide-react';
 
 export const sidebarData = {
   user: {
-    name: "satnaing",
-    email: "satnaingdev@gmail.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: 'satnaing',
+    email: 'satnaingdev@gmail.com',
+    avatar: '/avatars/shadcn.jpg',
   },
   teams: [
     {
-      name: "Shadcn Admin",
+      name: 'Shadcn Admin',
       logo: Command,
-      plan: "Vite + ShadcnUI",
+      plan: 'Vite + ShadcnUI',
     },
     {
-      name: "Acme Inc",
+      name: 'Acme Inc',
       logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      plan: 'Enterprise',
     },
     {
-      name: "Acme Corp.",
+      name: 'Acme Corp.',
       logo: AudioWaveform,
-      plan: "Startup",
+      plan: 'Startup',
     },
   ],
   navGroups: [
     {
-      title: "General",
+      title: 'General',
       items: [
         {
-          title: "Dashboard",
-          url: "/",
+          title: 'Dashboard',
+          url: '/',
           icon: IconLayoutDashboard,
         },
         {
-          title: "Tasks",
-          url: "/tasks",
+          title: 'Tasks',
+          url: '/tasks',
           icon: IconChecklist,
         },
+        // {
+        //   title: "Apps",
+        //   url: "/apps",
+        //   icon: IconPackages,
+        // },
         {
-          title: "Apps",
-          url: "/apps",
-          icon: IconPackages,
-        },
-        {
-          title: "Chats",
-          url: "/chats",
-          badge: "3",
+          title: 'Chats',
+          url: '/chats',
+          badge: '3',
           icon: IconMessages,
         },
         {
-          title: "Users",
-          url: "/users",
+          title: 'Members',
+          url: '/members',
           icon: IconUsers,
         },
       ],
     },
     {
-      title: "Other",
+      title: 'Other',
       items: [
         {
-          title: "Settings",
+          title: 'Settings',
           icon: IconSettings,
           items: [
             {
-              title: "Profile",
-              url: "/settings",
+              title: 'Profile',
+              url: '/settings',
               icon: IconUserCog,
             },
             {
-              title: "Account",
-              url: "/settings/account",
+              title: 'Account',
+              url: '/settings/account',
               icon: IconTool,
             },
             {
-              title: "Appearance",
-              url: "/settings/appearance",
+              title: 'Appearance',
+              url: '/settings/appearance',
               icon: IconPalette,
             },
             {
-              title: "Notifications",
-              url: "/settings/notifications",
+              title: 'Notifications',
+              url: '/settings/notifications',
               icon: IconNotification,
             },
             {
-              title: "Display",
-              url: "/settings/display",
+              title: 'Display',
+              url: '/settings/display',
               icon: IconBrowserCheck,
             },
           ],
         },
         {
-          title: "Help Center",
-          url: "/help-center",
+          title: 'Help Center',
+          url: '/help-center',
           icon: IconHelp,
         },
       ],
