@@ -1,9 +1,11 @@
 import ChatCard from '@/components/chats/chat-card';
 import { ChatSidebar } from '@/components/chats/chat-menu-list';
 import { UsersPrimaryButtons } from '@/components/users/users-primary-buttons';
+import { useTitle } from '@/hooks/useTitle';
 import UsersProvider from '@/pages/users/context/users-context';
 
-export default function Users() {
+const ChatsPages = () => {
+  useTitle('Chats');
   return (
     <UsersProvider>
       <div className="mb-2 flex flex-wrap items-center justify-between space-y-2">
@@ -21,4 +23,6 @@ export default function Users() {
       </div>
     </UsersProvider>
   );
-}
+};
+
+export default ChatsPages;

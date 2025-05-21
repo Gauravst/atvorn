@@ -1,16 +1,13 @@
 import {
-  IconBrowserCheck,
   IconChecklist,
   IconHelp,
   IconLayoutDashboard,
   IconMessages,
-  IconNotification,
-  IconPackages,
-  IconPalette,
   IconSettings,
-  IconTool,
-  IconUserCog,
   IconUsers,
+  IconPuzzle,
+  IconApps,
+  IconPlug,
 } from '@tabler/icons-react';
 import { AudioWaveform, Command, GalleryVerticalEnd } from 'lucide-react';
 
@@ -43,29 +40,42 @@ export const sidebarData = {
       items: [
         {
           title: 'Dashboard',
-          url: '/',
+          url: './',
           icon: IconLayoutDashboard,
         },
         {
           title: 'Tasks',
-          url: '/tasks',
+          url: './tasks',
           icon: IconChecklist,
         },
-        // {
-        //   title: "Apps",
-        //   url: "/apps",
-        //   icon: IconPackages,
-        // },
         {
           title: 'Chats',
-          url: '/chats',
+          url: './chats',
           badge: '3',
           icon: IconMessages,
         },
         {
           title: 'Members',
-          url: '/members',
+          url: './members',
           icon: IconUsers,
+        },
+        {
+          title: 'Modules',
+          icon: IconPuzzle,
+          items: [
+            {
+              title: 'Apps',
+              url: './apps',
+              icon: IconApps,
+              badge: 'coming soon',
+            },
+            {
+              title: 'Plugins',
+              url: './plugins',
+              icon: IconPlug,
+              badge: 'coming soon',
+            },
+          ],
         },
       ],
     },
@@ -73,35 +83,9 @@ export const sidebarData = {
       title: 'Other',
       items: [
         {
-          title: 'Settings',
+          title: 'Project Settings',
           icon: IconSettings,
-          items: [
-            {
-              title: 'Profile',
-              url: '/settings',
-              icon: IconUserCog,
-            },
-            {
-              title: 'Account',
-              url: '/settings/account',
-              icon: IconTool,
-            },
-            {
-              title: 'Appearance',
-              url: '/settings/appearance',
-              icon: IconPalette,
-            },
-            {
-              title: 'Notifications',
-              url: '/settings/notifications',
-              icon: IconNotification,
-            },
-            {
-              title: 'Display',
-              url: '/settings/display',
-              icon: IconBrowserCheck,
-            },
-          ],
+          url: './settings',
         },
         {
           title: 'Help Center',

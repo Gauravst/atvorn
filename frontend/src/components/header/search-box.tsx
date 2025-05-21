@@ -1,14 +1,16 @@
 'use client';
-
 import * as React from 'react';
 import {
-  Calculator,
   Calendar,
   CreditCard,
   Settings,
-  Smile,
   User,
+  ListTodo,
+  MessageSquareText,
+  Users2,
+  HelpCircle,
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 import {
   CommandDialog,
@@ -23,12 +25,28 @@ import {
 import { Dispatch, SetStateAction } from 'react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
+const generalCommands = [
+  { icon: Calendar, label: 'Dashboard', path: '/dashboard' },
+  { icon: ListTodo, label: 'Task', path: '/tasks' },
+  { icon: MessageSquareText, label: 'Chat', path: '/chat' },
+  { icon: Users2, label: 'Members', path: '/members' },
+];
+
+const settingCommands = [
+  { icon: User, label: 'Profile', shortcut: '⌘P', path: '/profile' },
+  { icon: CreditCard, label: 'Billing', shortcut: '⌘B', path: '/billing' },
+  { icon: Settings, label: 'Settings', shortcut: '⌘S', path: '/settings' },
+  { icon: HelpCircle, label: 'Help Center', shortcut: '⌘H', path: '/help' },
+];
+
 type SearchBoxProps = {
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
 };
 
 export const SearchBox = ({ open, setOpen }: SearchBoxProps) => {
+  const navigate = useNavigate();
+
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
@@ -41,6 +59,11 @@ export const SearchBox = ({ open, setOpen }: SearchBoxProps) => {
     return () => document.removeEventListener('keydown', down);
   }, []);
 
+  const handleCommand = (path: string) => {
+    navigate(path);
+    setOpen(false);
+  };
+
   return (
     <>
       <CommandDialog open={open} onOpenChange={setOpen}>
@@ -48,37 +71,33 @@ export const SearchBox = ({ open, setOpen }: SearchBoxProps) => {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <ScrollArea className="scrollbar-thin scrollbar-thumb-muted-foreground scrollbar-track-transparent h-72">
-            <CommandGroup heading="Suggestions">
-              <CommandItem>
-                <Calendar />
-                <span>Calendar</span>
-              </CommandItem>
-              <CommandItem>
-                <Smile />
-                <span>Search Emoji</span>
-              </CommandItem>
-              <CommandItem>
-                <Calculator />
-                <span>Calculator</span>
-              </CommandItem>
+            <CommandGroup heading="General">
+              {generalCommands.map((item, index) => (
+                <CommandItem
+                  key={index}
+                  onSelect={() => handleCommand(item.path)}
+                >
+                  <item.icon className="mr-2 h-4 w-4" />
+                  <span>{item.label}</span>
+                </CommandItem>
+              ))}
             </CommandGroup>
+
             <CommandSeparator />
+
             <CommandGroup heading="Settings">
-              <CommandItem>
-                <User />
-                <span>Profile</span>
-                <CommandShortcut>⌘P</CommandShortcut>
-              </CommandItem>
-              <CommandItem>
-                <CreditCard />
-                <span>Billing</span>
-                <CommandShortcut>⌘B</CommandShortcut>
-              </CommandItem>
-              <CommandItem>
-                <Settings />
-                <span>Settings</span>
-                <CommandShortcut>⌘S</CommandShortcut>
-              </CommandItem>
+              {settingCommands.map((item, index) => (
+                <CommandItem
+                  key={index}
+                  onSelect={() => handleCommand(item.path)}
+                >
+                  <item.icon className="mr-2 h-4 w-4" />
+                  <span>{item.label}</span>
+                  {item.shortcut && (
+                    <CommandShortcut>{item.shortcut}</CommandShortcut>
+                  )}
+                </CommandItem>
+              ))}
             </CommandGroup>
           </ScrollArea>
         </CommandList>

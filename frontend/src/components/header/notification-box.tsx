@@ -143,7 +143,7 @@ export const NotificationBox = ({ className }: { className?: string }) => {
                     {notification.message}
                   </p>
                   {!notification.read && (
-                    <div className="bg-primary absolute top-4 right-4 h-2 w-2 rounded-full" />
+                    <div className="bg-primary absolute top-10 right-4 h-2 w-2 rounded-full" />
                   )}
                 </DropdownMenuItem>
               ))}

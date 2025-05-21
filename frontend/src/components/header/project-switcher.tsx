@@ -36,7 +36,7 @@ export function ProjectSwitcher({
     <SidebarMenu>
       <SidebarMenuItem>
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
+          <DropdownMenuTrigger>
             <SidebarMenuButton className="w-fit px-1.5" variant="outline">
               <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-5 items-center justify-center rounded-md">
                 <activeTeam.logo className="size-3" />

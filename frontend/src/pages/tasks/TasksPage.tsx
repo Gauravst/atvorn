@@ -4,8 +4,10 @@ import { TasksDialogs } from '@/components/tasks/tasks-dialogs';
 import { TasksPrimaryButtons } from '@/components/tasks/tasks-primary-buttons';
 import TasksProvider from './context/tasks-context';
 import { tasks } from './data/tasks';
+import { useTitle } from '@/hooks/useTitle';
 
 const TasksPage = () => {
+  useTitle('Tasks');
   return (
     <TasksProvider>
       <div className="mb-2 flex flex-wrap items-center justify-between space-y-2 gap-x-4">

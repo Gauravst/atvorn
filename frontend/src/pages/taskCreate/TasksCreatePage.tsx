@@ -1,8 +1,10 @@
 import { TasksPrimaryButtons } from '@/components/tasks/tasks-primary-buttons';
 import TasksProvider from '../tasks/context/tasks-context';
 import { Editor } from '@/components/taskCreate/editor';
+import { useTitle } from '@/hooks/useTitle';
 
 const TaskCreatePage = () => {
+  useTitle('New Task');
   const title =
     "You can't compress the program without quantifyin We need to bypass the neural TCP card!";
   return (

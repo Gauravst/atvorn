@@ -9,8 +9,9 @@ import TasksPage from '@/pages/tasks/TasksPage';
 import TasksCreatePage from '@/pages/taskCreate/TasksCreatePage';
 import UsersPage from '@/pages/users/UsersPage';
 import ChatsPage from '@/pages/chats/ChatsPage';
-import ContinuePage from '@/pages/continue/ContinuePage';
-import SignupPage from '@/pages/signup/SignupPage';
+import NotFoundPage from '@/pages/notFound/NotFoundPage';
+import AuthenticationPage from '@/pages/auth/AuthPage';
+import StarterPage from './pages/starter/StarterPage';
 
 const App = () => {
   const { initializeTheme } = useThemeStore();
@@ -48,15 +49,21 @@ const App = () => {
         onLoaderFinished={() => setProgress(0)}
       />
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<StarterPage />} />
+        <Route path="/continue" element={<AuthenticationPage />} />
+        {/*<Route path="/settings" element={<UsersPage />} />
+        <Route path="/help" element={<AuthenticationPage />} />*/}
+
+        <Route path="/team/:teamSlug/project/:projectSlug" element={<Layout />}>
           <Route index element={<DashboardPage />} />
           <Route path="tasks" element={<TasksPage />} />
           <Route path="tasks/create" element={<TasksCreatePage />} />
           <Route path="chats" element={<ChatsPage />} />
           <Route path="members" element={<UsersPage />} />
+          {/*<Route path="settings" element={<UsersPage />} />*/}
         </Route>
 
-        <Route path="/continue" element={<ContinuePage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   );

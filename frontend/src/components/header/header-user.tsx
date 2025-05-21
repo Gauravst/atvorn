@@ -1,6 +1,12 @@
 'use client';
 
-import { BadgeCheck, Bell, CreditCard, LogOut, Sparkles } from 'lucide-react';
+import {
+  BadgeCheck,
+  CreditCard,
+  LogOut,
+  Settings,
+  Sparkles,
+} from 'lucide-react';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -12,7 +18,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useSidebar } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
 
 export function HeaderNavUser({
@@ -24,20 +29,18 @@ export function HeaderNavUser({
     avatar: string;
   };
 }) {
-  const { isMobile } = useSidebar();
-
   return (
     <DropdownMenu modal={false}>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-          <Avatar className="h-8 w-8 cursor-pointer">
+      <DropdownMenuTrigger>
+        <Button variant="outline" size="icon" className="relative rounded-full">
+          <Avatar className="h-full w-full cursor-pointer">
             <AvatarImage src="/avatars/01.png" alt="@shadcn" />
             <AvatarFallback>SN</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="end" forceMount>
-        <DropdownMenuLabel className="font-normal">
+        <DropdownMenuLabel className="cursor-pointer font-normal">
           <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
             <Avatar className="h-8 w-8 rounded-lg">
               <AvatarImage src={user.avatar} alt={user.name} />
@@ -63,12 +66,12 @@ export function HeaderNavUser({
             Account
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <CreditCard />
-            Billing
+            <Settings />
+            Settings
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Bell />
-            Notifications
+            <CreditCard />
+            Billing
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />

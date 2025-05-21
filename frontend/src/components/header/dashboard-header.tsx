@@ -1,6 +1,6 @@
 import { Separator } from '@/components/ui/separator';
 import { AudioWaveform, Command } from 'lucide-react';
-import { Moon, Sun, Bell } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
 import { SearchBar } from '@/components/header/search';
@@ -53,8 +53,8 @@ export const DashboardHeader = () => {
             onClick={toggleDarkMode}
             className="cursor-pointer"
           >
-            <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-            <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+            <Sun className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+            <Moon className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
           </Button>
           <HeaderNavUser user={user} />
         </div>

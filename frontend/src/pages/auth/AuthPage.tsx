@@ -1,12 +1,25 @@
 import { Link } from 'react-router-dom';
+import { useTitle } from '@/hooks/useTitle';
+import { useThemeStore } from '@/store/themeStore';
 
-// import { cn } from '@/lib/utils';
-// import { buttonVariants } from '@/components/ui/button';
 import { UserAuthForm } from '@/components/continue/user-auth-form';
+import { Button } from '@/components/ui/button';
+import { Moon, Sun } from 'lucide-react';
 
-export default function AuthenticationPage() {
+const AuthenticationPage = () => {
+  const { toggleDarkMode } = useThemeStore();
+  useTitle('Auth');
   return (
     <div className="h-[100vh] overflow-hidden">
+      <Button
+        variant="outline"
+        size="icon"
+        onClick={toggleDarkMode}
+        className="fixed top-5 right-5 z-50 cursor-pointer md:top-10 md:right-10"
+      >
+        <Sun className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+        <Moon className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+      </Button>
       <div className="md:hidden">
         <img
           src="/examples/authentication-light.png"
@@ -48,7 +61,7 @@ export default function AuthenticationPage() {
                 projects — everything's streamlined, efficient, and actually
                 enjoyable to use.”
               </p>
-              <footer className="text-sm">Ravi Mehta</footer>
+              <footer className="text-sm">~ Narendra Modi</footer>
             </blockquote>
           </div>
         </div>
@@ -64,7 +77,7 @@ export default function AuthenticationPage() {
             </div>
             <UserAuthForm />
             <p className="text-muted-foreground px-8 text-center text-sm">
-              By clicking continue, you agree to our{' '}
+              By clicking continue, you agree to our <br />
               <Link
                 to="/terms"
                 className="hover:text-primary underline underline-offset-4"
@@ -85,4 +98,6 @@ export default function AuthenticationPage() {
       </div>
     </div>
   );
-}
+};
+
+export default AuthenticationPage;

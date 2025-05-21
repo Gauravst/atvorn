@@ -30,7 +30,7 @@ import {
 export function NavGroup({ title, items }: { title: string; items: any[] }) {
   const { state } = useSidebar();
   const location = useLocation();
-  const href = location.pathname; // getting the current path
+  const href = location.pathname;
 
   return (
     <SidebarGroup>
