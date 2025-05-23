@@ -2,7 +2,7 @@ import { ColumnDef } from '@tanstack/react-table';
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
-import LongText from '@/components/long-text';
+import LongText from '@/components/utils/long-text';
 import { callTypes, userTypes } from '@/pages/users/data/data';
 import { User } from '@/pages/users/data/schema';
 import { DataTableColumnHeader } from './data-table-column-header';

@@ -1,3 +1,7 @@
+import { Link } from 'react-router-dom';
+import { useTitle } from '@/hooks/useTitle';
+import { Plus } from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -8,19 +12,17 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Overview } from '@/components/dashboard/overview';
 import { DatePickerWithRange } from '@/components/dashboard/date-range-picker';
-import { Link } from 'react-router-dom';
 import { ReminderCard } from '@/components/dashboard/reminder-card';
-import { Plus } from 'lucide-react';
 import { DashboardCards } from '@/components/dashboard/dashboard-cards';
 import { RecentActivity } from '@/components/dashboard/recent-activity';
-import { useTitle } from '@/hooks/useTitle';
+import { TaskOverviewChart } from '@/components/dashboard/task-overview-chart';
+import { Main } from '@/components/layout/main';
 
 const DashboardPage = () => {
   useTitle('Dashboard');
   return (
-    <>
+    <Main>
       <div className="mb-2 flex items-center justify-between space-y-2">
         <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
         <div className="flex items-center space-x-2">
@@ -50,9 +52,12 @@ const DashboardPage = () => {
             <Card className="col-span-1 lg:col-span-4">
               <CardHeader>
                 <CardTitle>Tasks Overview</CardTitle>
+                <CardDescription>
+                  Overview of tasks assigned and completed.
+                </CardDescription>
               </CardHeader>
               <CardContent className="pl-2">
-                <Overview />
+                <TaskOverviewChart />
               </CardContent>
             </Card>
             <Card className="col-span-1 lg:col-span-3">
@@ -100,7 +105,7 @@ const DashboardPage = () => {
           </Card>
         </TabsContent>
       </Tabs>
-    </>
+    </Main>
   );
 };
 

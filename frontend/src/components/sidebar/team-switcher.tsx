@@ -17,6 +17,7 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar';
 import { User } from 'lucide-react';
+import { CreateTeamDialog } from '@/components/utils/create-team-dialog';
 
 export function TeamSwitcher({
   teams,
@@ -29,6 +30,7 @@ export function TeamSwitcher({
 }) {
   const { isMobile } = useSidebar();
   const [activeTeam, setActiveTeam] = React.useState(teams[0]);
+  const [createTeamDialogOpen, setCreateTeamDialogOpen] = React.useState(false);
 
   if (!activeTeam) {
     return null;
@@ -36,6 +38,10 @@ export function TeamSwitcher({
 
   return (
     <SidebarMenu>
+      <CreateTeamDialog
+        open={createTeamDialogOpen}
+        setOpen={setCreateTeamDialogOpen}
+      />
       <SidebarMenuItem>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -84,7 +90,10 @@ export function TeamSwitcher({
               </DropdownMenuItem>
             ))}
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="gap-2 p-2">
+            <DropdownMenuItem
+              className="gap-2 p-2"
+              onClick={() => setCreateTeamDialogOpen(true)}
+            >
               <div className="flex size-6 items-center justify-center rounded-md border bg-transparent">
                 <Plus className="size-4" />
               </div>

@@ -22,8 +22,8 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { PasswordInput } from '@/components/password-input';
-import { SelectDropdown } from '@/components/select-dropdown';
+import { PasswordInput } from '@/components/utils/password-input';
+import { SelectDropdown } from '@/components/utils/select-dropdown';
 import { userTypes } from '@/pages/users/data/data';
 import { User } from '@/pages/users/data/schema';
 

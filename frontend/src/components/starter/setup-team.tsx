@@ -15,12 +15,17 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { CreateTeamDialog } from '@/components/utils/create-team-dialog';
+import { CreateProjectDialog } from '@/components/utils/create-project-dialog';
+
 import { Plus, MoreVertical } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export const StarterTeam = () => {
   const [selectedTeam, setSelectedTeam] = useState<number | null>(0);
+  const [createTeamDialogOpen, setCreateTeamDialogOpen] = useState(false);
+  const [createProjectDialogOpen, setCreateProjectDialogOpen] = useState(false);
   const navigate = useNavigate();
 
   const data = [
@@ -114,6 +119,16 @@ export const StarterTeam = () => {
 
   return (
     <div className="flex h-[300px] w-full items-center justify-center gap-0">
+      <CreateTeamDialog
+        open={createTeamDialogOpen}
+        setOpen={setCreateTeamDialogOpen}
+      />
+
+      <CreateProjectDialog
+        open={createProjectDialogOpen}
+        setOpen={setCreateProjectDialogOpen}
+      />
+
       {/* Team Panel */}
       <Card className="w-[30%] rounded-r-none border-r-0">
         <CardHeader className="flex justify-between">
@@ -121,7 +136,11 @@ export const StarterTeam = () => {
             <CardTitle>Teams</CardTitle>
             <CardDescription>All your teams</CardDescription>
           </div>
-          <Button variant="outline" size="icon">
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => setCreateTeamDialogOpen(true)}
+          >
             <Plus />
           </Button>
         </CardHeader>
@@ -183,7 +202,13 @@ export const StarterTeam = () => {
             <CardTitle>Projects</CardTitle>
             <CardDescription>Projects under selected team</CardDescription>
           </div>
-          <Button variant="outline" size="icon">
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => {
+              setCreateProjectDialogOpen(true);
+            }}
+          >
             <Plus />
           </Button>
         </CardHeader>

@@ -8,6 +8,8 @@ import {
   IconPuzzle,
   IconApps,
   IconPlug,
+  IconFileText,
+  IconMessageCircle,
 } from '@tabler/icons-react';
 import { AudioWaveform, Command, GalleryVerticalEnd } from 'lucide-react';
 
@@ -89,8 +91,21 @@ export const sidebarData = {
         },
         {
           title: 'Help Center',
-          url: '/help-center',
           icon: IconHelp,
+          items: [
+            {
+              title: 'Docs',
+              url: 'https://github.com/gauravst/atvorn/blob/dev/docs/getting-started.md',
+              icon: IconFileText,
+              target: '_blank',
+            },
+            {
+              title: 'Discussions',
+              url: 'https://github.com/Gauravst/atvorn/discussions',
+              icon: IconMessageCircle,
+              target: '_blank',
+            },
+          ],
         },
       ],
     },

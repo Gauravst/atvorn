@@ -26,16 +26,16 @@ import { Dispatch, SetStateAction } from 'react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 const generalCommands = [
-  { icon: Calendar, label: 'Dashboard', path: '/dashboard' },
-  { icon: ListTodo, label: 'Task', path: '/tasks' },
-  { icon: MessageSquareText, label: 'Chat', path: '/chat' },
-  { icon: Users2, label: 'Members', path: '/members' },
+  { icon: Calendar, label: 'Dashboard', path: './dashboard' },
+  { icon: ListTodo, label: 'Task', path: './tasks' },
+  { icon: MessageSquareText, label: 'Chat', path: './chat' },
+  { icon: Users2, label: 'Members', path: './members' },
 ];
 
 const settingCommands = [
-  { icon: User, label: 'Profile', shortcut: '⌘P', path: '/profile' },
+  { icon: User, label: 'Profile', shortcut: '⌘P', path: './profile' },
   { icon: CreditCard, label: 'Billing', shortcut: '⌘B', path: '/billing' },
-  { icon: Settings, label: 'Settings', shortcut: '⌘S', path: '/settings' },
+  { icon: Settings, label: 'Settings', shortcut: '⌘S', path: './settings' },
   { icon: HelpCircle, label: 'Help Center', shortcut: '⌘H', path: '/help' },
 ];
 
@@ -57,7 +57,7 @@ export const SearchBox = ({ open, setOpen }: SearchBoxProps) => {
 
     document.addEventListener('keydown', down);
     return () => document.removeEventListener('keydown', down);
-  }, []);
+  }, [setOpen]);
 
   const handleCommand = (path: string) => {
     navigate(path);

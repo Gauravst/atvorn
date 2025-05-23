@@ -6,7 +6,7 @@ import { IconSearch } from '@tabler/icons-react';
 
 export const ChatSidebar = () => {
   return (
-    <Card className="h-[75vh] max-w-sm overflow-hidden rounded-lg p-0">
+    <Card className="h-full w-[50%] rounded-lg p-0">
       <CardHeader className="mt-5 pb-0">
         <div className="relative w-full max-w-sm">
           <IconSearch className="absolute top-1/2 left-3 -translate-y-1/2 text-sm text-gray-400" />
@@ -22,6 +22,169 @@ export const ChatSidebar = () => {
             <ChatMenuItem />
             <ChatMenuItem />
             <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+            <ChatMenuItem />
+
             <ChatMenuItem />
             <ChatMenuItem />
           </div>

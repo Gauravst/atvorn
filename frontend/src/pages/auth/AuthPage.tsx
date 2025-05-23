@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useTitle } from '@/hooks/useTitle';
 import { useThemeStore } from '@/store/themeStore';
 
-import { UserAuthForm } from '@/components/continue/user-auth-form';
+import { UserAuthForm } from '@/components/auth/user-auth-form';
 import { Button } from '@/components/ui/button';
 import { Moon, Sun } from 'lucide-react';
 

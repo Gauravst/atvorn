@@ -1,4 +1,4 @@
-'use client';
+import { useState } from 'react';
 
 import {
   BadgeCheck,
@@ -19,6 +19,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
+import { ConfirmDialog } from '@/components/utils/confirm-dialog';
 
 export function HeaderNavUser({
   user,
@@ -29,8 +30,21 @@ export function HeaderNavUser({
     avatar: string;
   };
 }) {
+  const [deleteDialog, setDeleteDialog] = useState(false);
+
+  const handleDelete = () => {};
+
   return (
     <DropdownMenu modal={false}>
+      <ConfirmDialog
+        open={deleteDialog}
+        onOpenChange={setDeleteDialog}
+        title={'Confirm Logout'}
+        desc={'Are you sure you want to log out?'}
+        confirmText={'Logout'}
+        destructive={true}
+        handleConfirm={handleDelete}
+      />
       <DropdownMenuTrigger>
         <Button variant="outline" size="icon" className="relative rounded-full">
           <Avatar className="h-full w-full cursor-pointer">
@@ -75,7 +89,11 @@ export function HeaderNavUser({
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => {
+            setDeleteDialog(true);
+          }}
+        >
           <LogOut />
           Log out
         </DropdownMenuItem>

@@ -1,20 +1,15 @@
-// src/components/LoadingBar.tsx
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import LoadingBar from 'react-top-loading-bar';
 
 const LoadingBarComponent = () => {
-  const loadingBarRef = useRef<any>(null); // Ref to control the loading bar
+  const loadingBarRef = useRef<InstanceType<typeof LoadingBar> | null>(null);
 
   const startLoading = () => {
-    if (loadingBarRef.current) {
-      loadingBarRef.current.continuousStart(); // Start the loading bar
-    }
+    loadingBarRef.current?.continuousStart();
   };
 
   const stopLoading = () => {
-    if (loadingBarRef.current) {
-      loadingBarRef.current.complete(); // Stop the loading bar
-    }
+    loadingBarRef.current?.complete();
   };
 
   return (

@@ -1,5 +1,3 @@
-'use client';
-
 import * as React from 'react';
 import { ChevronDown, Plus } from 'lucide-react';
 
@@ -17,6 +15,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
+import { CreateProjectDialog } from '@/components/utils/create-project-dialog';
 
 export function ProjectSwitcher({
   teams,
@@ -27,6 +26,8 @@ export function ProjectSwitcher({
   }[];
 }) {
   const [activeTeam, setActiveTeam] = React.useState(teams[0]);
+  const [createProjectDialogOpen, setCreateProjectDialogOpen] =
+    React.useState(false);
 
   if (!activeTeam) {
     return null;
@@ -34,6 +35,10 @@ export function ProjectSwitcher({
 
   return (
     <SidebarMenu>
+      <CreateProjectDialog
+        open={createProjectDialogOpen}
+        setOpen={setCreateProjectDialogOpen}
+      />
       <SidebarMenuItem>
         <DropdownMenu>
           <DropdownMenuTrigger>
@@ -68,7 +73,10 @@ export function ProjectSwitcher({
               </DropdownMenuItem>
             ))}
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="gap-2 p-2">
+            <DropdownMenuItem
+              className="gap-2 p-2"
+              onClick={() => setCreateProjectDialogOpen(true)}
+            >
               <div className="bg-background flex size-6 items-center justify-center rounded-md border">
                 <Plus className="size-4" />
               </div>
