@@ -12,7 +12,7 @@ export const Main = ({ fixed, ...props }: MainProps) => {
     <main
       className={cn(
         'peer-[.header-fixed]/header:mt-16',
-        'py-6 pr-4 pl-2',
+        'mb-15 py-6 pr-4 pl-2',
         fixed && 'inset-0 flex grow flex-col overflow-hidden pr-5 pb-2 pl-3',
         fixed && 'h-[calc(100vh-64px-0.5rem)]'
       )}

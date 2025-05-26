@@ -11,7 +11,9 @@ import UsersPage from '@/pages/users/UsersPage';
 import ChatsPage from '@/pages/chats/ChatsPage';
 import NotFoundPage from '@/pages/notFound/NotFoundPage';
 import AuthenticationPage from '@/pages/auth/AuthPage';
-import StarterPage from './pages/starter/StarterPage';
+import StarterPage from '@/pages/starter/StarterPage';
+import TermsPage from '@/pages/terms/TermsPage';
+import PrivacyPolicyPage from '@/pages/privacy/PrivacyPage';
 
 const App = () => {
   const { initializeTheme } = useThemeStore();
@@ -51,6 +53,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<StarterPage />} />
         <Route path="/continue" element={<AuthenticationPage />} />
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="/privacy" element={<PrivacyPolicyPage />} />
         {/*<Route path="/settings" element={<UsersPage />} />
         <Route path="/help" element={<AuthenticationPage />} />*/}
 

@@ -20,7 +20,7 @@ const ChatsPages = () => {
           </div>
           <ChatsPrimaryButtons />
         </div>
-        <div className="flex h-[50vh] flex-1 gap-x-4 lg:flex-row lg:space-y-0">
+        <div className="flex h-[50vh] flex-1 flex-col gap-x-4 lg:flex-row lg:space-y-0">
           <ChatSidebar />
           <ChatCard />
         </div>

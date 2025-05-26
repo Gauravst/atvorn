@@ -50,7 +50,7 @@ export function ReminderCard() {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-x-3">
+    <div className="grid grid-cols-1 gap-x-3 gap-y-3 sm:grid-cols-2 md:grid-cols-3">
       {reminderData.map((item) => (
         <Card key={item.id}>
           <CardHeader className="mb-0 pb-0">

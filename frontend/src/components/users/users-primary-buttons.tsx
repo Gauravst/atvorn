@@ -11,7 +11,7 @@ export function UsersPrimaryButtons() {
     { id: '2', name: 'Ravi Kumar', email: 'ravi@xyz.com', image: '' },
   ];
   return (
-    <div className="flex gap-2">
+    <div className="grid w-full grid-cols-2 gap-2 sm:w-auto">
       <UsersInviteDialog
         open={inviteDialogOpen}
         onOpenChange={setInviteDialogOpen}
@@ -47,13 +47,13 @@ export function UsersPrimaryButtons() {
       />
       <Button
         variant="outline"
-        className="cursor-pointer space-x-1"
+        className="w-full cursor-pointer space-x-1 sm:w-auto"
         onClick={() => setInviteDialogOpen(true)}
       >
         <span>Invite User</span> <IconMailPlus size={18} />
       </Button>
       <Button
-        className="cursor-pointer space-x-1"
+        className="w-full cursor-pointer space-x-1 sm:w-auto"
         onClick={() => setAddDialogOpen(true)}
       >
         <span>Add User</span> <IconUserPlus size={18} />

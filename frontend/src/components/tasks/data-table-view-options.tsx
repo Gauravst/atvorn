@@ -19,9 +19,9 @@ export function DataTableViewOptions<TData>({
   table,
 }: DataTableViewOptionsProps<TData>) {
   return (
-    <div className="ml-auto flex items-center justify-center">
+    <div className="flex w-full items-center justify-center md:ml-auto md:w-auto">
       <Tabs defaultValue="my" className="mr-2 w-full">
-        <TabsList className="bg-muted h-8 w-fit">
+        <TabsList className="bg-muted h-8 w-full md:h-8 md:w-fit">
           <TabsTrigger value="my">My Tasks</TabsTrigger>
           <TabsTrigger value="all">All Tasks</TabsTrigger>
         </TabsList>

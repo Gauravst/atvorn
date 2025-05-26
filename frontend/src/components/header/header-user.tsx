@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import {
   BadgeCheck,
@@ -6,6 +7,7 @@ import {
   LogOut,
   Settings,
   Sparkles,
+  Grid2x2,
 } from 'lucide-react';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -31,6 +33,7 @@ export function HeaderNavUser({
   };
 }) {
   const [deleteDialog, setDeleteDialog] = useState(false);
+  const navigate = useNavigate();
 
   const handleDelete = () => {};
 
@@ -75,6 +78,10 @@ export function HeaderNavUser({
           <DropdownMenuSeparator />
         </DropdownMenuGroup>
         <DropdownMenuGroup>
+          <DropdownMenuItem onClick={() => navigate('/')}>
+            <Grid2x2 />
+            Workspace
+          </DropdownMenuItem>
           <DropdownMenuItem>
             <BadgeCheck />
             Account

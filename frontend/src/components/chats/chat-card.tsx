@@ -32,7 +32,7 @@ const ChatCard = () => {
   const matchTask = message.match(/#TASK_\d+/);
 
   return (
-    <Card className="m-0 flex h-full w-full flex-col items-center border">
+    <Card className="m-0 hidden h-full w-full flex-col items-center border sm:flex">
       <CardHeader className="w-full pb-0">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">

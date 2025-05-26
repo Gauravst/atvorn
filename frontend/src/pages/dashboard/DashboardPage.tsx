@@ -25,7 +25,7 @@ const DashboardPage = () => {
     <Main>
       <div className="mb-2 flex items-center justify-between space-y-2">
         <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
-        <div className="flex items-center space-x-2">
+        <div className="hidden items-center space-x-2 sm:flex">
           <DatePickerWithRange />
           <Button className="cursor-pointer">Download</Button>
         </div>
@@ -89,7 +89,7 @@ const DashboardPage = () => {
               </div>
             </CardHeader>
 
-            <CardContent>
+            <CardContent className="p-3">
               <ReminderCard />
             </CardContent>
 

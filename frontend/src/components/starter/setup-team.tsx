@@ -118,7 +118,7 @@ export const StarterTeam = () => {
   };
 
   return (
-    <div className="flex h-[300px] w-full items-center justify-center gap-0">
+    <div className="flex h-[300px] w-full flex-col items-center justify-center gap-0 sm:flex-row">
       <CreateTeamDialog
         open={createTeamDialogOpen}
         setOpen={setCreateTeamDialogOpen}
@@ -130,7 +130,7 @@ export const StarterTeam = () => {
       />
 
       {/* Team Panel */}
-      <Card className="w-[30%] rounded-r-none border-r-0">
+      <Card className="w-[90%] sm:w-[30%] sm:rounded-r-none sm:border-r-0">
         <CardHeader className="flex justify-between">
           <div>
             <CardTitle>Teams</CardTitle>
@@ -196,7 +196,7 @@ export const StarterTeam = () => {
       </Card>
 
       {/* Project Panel */}
-      <Card className="w-[30%] rounded-l-none">
+      <Card className="hidden w-[30%] rounded-l-none sm:flex">
         <CardHeader className="flex justify-between">
           <div>
             <CardTitle>Projects</CardTitle>

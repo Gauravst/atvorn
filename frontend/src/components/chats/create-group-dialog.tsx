@@ -50,7 +50,7 @@ export const CreateGroupDialog: React.FC<CreateGroupDialogProps> = ({
 
         <div className="grid gap-4 py-4">
           <div>
-            <label className="text-sm font-medium">Group Name</label>
+            <label className="mb-4 text-sm font-medium">Group Name</label>
             <Input
               value={groupName}
               onChange={(e) => setGroupName(e.target.value)}
@@ -73,8 +73,6 @@ export const CreateGroupDialog: React.FC<CreateGroupDialogProps> = ({
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
-
-          <Separator />
 
           <div className="flex justify-end gap-2">
             <Button variant="ghost" onClick={() => setOpen(false)}>

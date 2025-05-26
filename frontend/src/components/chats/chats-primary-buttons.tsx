@@ -8,7 +8,7 @@ export const ChatsPrimaryButtons = () => {
   const [newChatDialogOpen, setNewChatDialogOpen] = useState(false);
   const [createGroupDialogOpen, setCreateGroupDialogOpen] = useState(false);
   return (
-    <div className="flex gap-2">
+    <div className="grid w-full grid-cols-2 gap-2 md:w-auto">
       <NewChatDialog open={newChatDialogOpen} setOpen={setNewChatDialogOpen} />
       <CreateGroupDialog
         open={createGroupDialogOpen}
@@ -16,14 +16,14 @@ export const ChatsPrimaryButtons = () => {
       />
 
       <Button
-        className="cursor-pointer space-x-1"
+        className="w-full cursor-pointer space-x-1 md:w-auto"
         variant="outline"
         onClick={() => setCreateGroupDialogOpen(true)}
       >
         <span>New Group</span> <IconUsers size={18} />
       </Button>
       <Button
-        className="cursor-pointer space-x-1"
+        className="w-full cursor-pointer space-x-1 md:w-auto"
         onClick={() => setNewChatDialogOpen(true)}
       >
         <span>New Chat</span> <IconMessage size={18} />

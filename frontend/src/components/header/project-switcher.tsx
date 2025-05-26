@@ -34,7 +34,7 @@ export function ProjectSwitcher({
   }
 
   return (
-    <SidebarMenu>
+    <SidebarMenu className="hidden md:flex">
       <CreateProjectDialog
         open={createProjectDialogOpen}
         setOpen={setCreateProjectDialogOpen}
